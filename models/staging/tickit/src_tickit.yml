@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+    - name: tickit
+      database: dbt-507
+      schema: tickit
+      tables:
+        - name: users
+          description: users data.
+          columns:
+            - name: userid
+              description: primary key for users.
+              tests:
+                 - unique 
+                 - not_null
+        - name: sales
+          description: sales data.
+          columns:
+            - name: salesid
+              description: primary key for each sale.
+              tests:
+                 - unique 
+                 - not_null

@@ -5,7 +5,6 @@ with users as (
         firstname,
         lastname
 
-    from dbt-507.tickit.users
-
+    from {{ source('tickit','users')}}
 )
 select * from users

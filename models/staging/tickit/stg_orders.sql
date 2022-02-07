@@ -5,7 +5,6 @@ with orders as (
         buyerid as user_id,
         
 
-    from dbt-507.tickit.sales
-
+    from {{ source('tickit','sales')}}
 )
 select * from orders
