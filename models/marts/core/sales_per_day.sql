@@ -1,3 +1,5 @@
+-- days that have much lower sales than average.
+
 with sales_per_day as (
 
     select * from {{ ref('stg_sales_per_day')}}
@@ -26,3 +28,4 @@ final as (
 )
 
 select * from final
+order by day
