@@ -1,4 +1,4 @@
--- days that have much lower sales than average.
+-- days which were outliers for the number of ticket sales.
 
 with sales_per_day as (
 

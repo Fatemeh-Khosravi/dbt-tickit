@@ -9,7 +9,7 @@ sources:
           description: users data.
           columns:
             - name: userid
-              description: primary key for users.
+              description: Primary key, a unique ID value for each row. Each row represents a registered user (a buyer or seller or both) who has listed or bought tickets for at least one event. 
               tests:
                  - unique 
                  - not_null
@@ -17,7 +17,24 @@ sources:
           description: sales data.
           columns:
             - name: salesid
-              description: primary key for each sale.
+              description: Primary key, a unique ID value for each row. Each row represents a sale of one or more tickets for a specific event, as offered in a specific listing. 
               tests:
                  - unique 
                  - not_null
+        - name: event
+          description: event data.
+          columns:
+            - name: eventid
+              description: Primary key, a unique ID value for each row. Each row represents a separate event that takes place at a specific venue at a specific time. 
+              tests:
+                 - unique 
+                 - not_null
+        - name: venue
+          description: venue data.
+          columns:
+            - name: venueid
+              description: Primary key, a unique ID value for each row. Each row represents a specific venue where events take place.
+              tests:
+                 - unique 
+                 - not_null
+            
