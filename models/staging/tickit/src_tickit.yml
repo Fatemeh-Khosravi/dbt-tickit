@@ -89,14 +89,34 @@ sources:
               tests:
                  - unique 
                  - not_null
+            - name: caldate
+              description: Calendar date, such as 2008-06-24. 
+            - name: day
+              description: Day of week (short form), such as SA. 
+            - name: week
+              description: Week number, such as 26. 
+            - name: month
+              description: Month name (short form), such as JUN. 
+            - name: qtr
+              description: Quarter number (1 through 4). 
+            - name: year
+              description: Four-digit year (2008). 
+            - name: holiday
+              description: Flag that denotes whether the day is a public holiday (U.S.). 
         - name: category
-          description: information about groups of events.
+          description: information about specific type of event for which tickets are bought and sold. 
           columns:
             - name: catid
               description: Primary key, a unique ID value for each row. Each row represents a specific type of event for which tickets are bought and sold. 
               tests:
                  - unique 
                  - not_null
+            - name: catgroup
+              description: Descriptive name for a group of events, such as Shows and Sports. 
+            - name: catname
+              description: Short descriptive name for a type of event within a group, such as Opera and Musicals. 
+            - name: catdesc
+              description: Longer descriptive name for the type of event, such as Musical theatre. 
         - name: listing
           description: listing of a batch of tickets for a specific event. .
           columns:
@@ -105,3 +125,17 @@ sources:
               tests:
                  - unique 
                  - not_null
+            - name: sellerid
+              description: Foreign-key reference to the USERS table, identifying the user who is selling the tickets. 
+            - name: eventid
+              description: Foreign-key reference to the EVENT table. 
+            - name: dateid
+              description: Foreign-key reference to the DATE table.
+            - name: numtickets
+              description: The number of tickets available for sale, such as 2 or 20. 
+            - name: priceperticket
+              description: The fixed price of an individual ticket, such as 27.00 or 206.00. 
+            - name: totalprice
+              description: The total price for this listing (NUMTICKETS*PRICEPERTICKET). 
+            - name: listtime
+              description: The full date and time when the listing was posted, such as 2008-03-18 07:19:35. 
