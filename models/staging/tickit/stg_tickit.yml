@@ -2,15 +2,23 @@ version: 2
 
 models:
   - name: stg_users
+    description: Staged user data from our tickit data.
     columns: 
       - name: user_id
+        description: The primary key for users.
         tests:
           - unique
           - not_null
 
   - name: stg_orders
+    description: Staged order data from our tickit data.
     columns:
       - name: order_id
+        description: The primary key for users who bought tickets.
         tests:
           - unique
           - not_null
+
+  - name: stg_sales_per_day
+    description: Total number of sales per day.
+    
