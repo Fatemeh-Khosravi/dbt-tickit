@@ -23,7 +23,7 @@ models:
     description: Total number of sales per day.
     
   -  name: stg_day_date
-     description: days of the calender.
+     description: staged days of the calender.
      columns:
       - name: caldate
         tests:
@@ -40,3 +40,10 @@ models:
                    - SU
                    - MO
                    - TU
+  - name: stg_event_rankings
+    description: Staged rankings of events by sales per each city.
+    columns:
+      - name: eventid
+        description: Primary key, a unique ID value for each row. Each row represents a separate event that takes place at a specific venue at a specific time. 
+        tests:
+          - not_null
