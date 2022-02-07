@@ -48,21 +48,39 @@ sources:
             - name: saletime
               description: The full date and time when the sale was completed, such as 2008-05-24 06:21:47. 
         - name: event
-          description: event data.
+          description: separate event that takes place at a specific venue at a specific time. .
           columns:
             - name: eventid
               description: Primary key, a unique ID value for each row. Each row represents a separate event that takes place at a specific venue at a specific time. 
               tests:
                  - unique 
                  - not_null
+            - name: venueid
+              description: Foreign-key reference to the VENUE table.
+            - name: catid
+              description: Foreign-key reference to the CATEGORY table. 
+            - name: dateid
+              description: Foreign-key reference to the DATE table.
+            - name: eventname
+              description : Name of the event, such as Hamlet or La Traviata. 
+            - name: starttime
+              description: Full date and start time for the event, such as 2008-10-10 19:30:00. 
         - name: venue
-          description: venue data.
+          description: information of specific venue where events take place.
           columns:
             - name: venueid
               description: Primary key, a unique ID value for each row. Each row represents a specific venue where events take place.
               tests:
                  - unique 
                  - not_null
+            - name: venuename
+              description: Exact name of the venue, such as Cleveland Browns Stadium. 
+            - name: venuecity
+              description: City name, such as Cleveland. 
+            - name: venuestate
+              description: Two-letter state or province abbreviation (United States and Canada), such as OH. 
+            - name: venueseats
+              description: Maximum number of seats available at the venue, if known, such as 73200. For demonstration purposes, this column contains some null values and zeroes. 
         - name: date
           description: date information.
           columns:
