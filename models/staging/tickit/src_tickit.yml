@@ -6,13 +6,21 @@ sources:
       schema: tickit
       tables:
         - name: users
-          description: users data.
+          description: list of registered user (a buyer or seller or both) who has listed or bought tickets for at least one event.
           columns:
             - name: userid
               description: Primary key, a unique ID value for each row. Each row represents a registered user (a buyer or seller or both) who has listed or bought tickets for at least one event. 
               tests:
                  - unique 
                  - not_null
+            - name: username
+            - name: firstname
+            - name: city
+            - name: state
+            - name: email
+            - name: phone
+            - name: likesports
+              description: A series of 10 different columns that identify the user's likes and dislikes with true(1) and false(0) values. 
         - name: sales
           description: sales data.
           columns:
@@ -21,6 +29,24 @@ sources:
               tests:
                  - unique 
                  - not_null
+            - name: listid
+              description: Foreign-key reference to the LISTING table.
+            - name: sellerid
+              description: Foreign-key reference to the USERS table (the user who sold the tickets). 
+            - name: buyerid
+              description: Foreign-key reference to the USERS table (the user who bought the tickets). 
+            - name: eventid
+              description: Foreign-key reference to the EVENT table. 
+            - name: dateid
+              description: Foreign-key reference to the DATE table. 
+            - name: qtysold
+              description: The number of tickets that were sold, from 1 to 8. (A maximum of 8 tickets can be sold in a single transaction.) 
+            - name: pricepaid
+              description: The total price paid for the tickets, such as 75.00 or 488.00. The individual price of a ticket is PRICEPAID/QTYSOLD. 
+            - name: commission
+              description: The 15% commission that the business collects from the sale, such as 11.25 or 73.20. The seller receives 85% of the PRICEPAID value.
+            - name: saletime
+              description: The full date and time when the sale was completed, such as 2008-05-24 06:21:47. 
         - name: event
           description: event data.
           columns:
@@ -42,6 +68,22 @@ sources:
           columns:
             - name: dateid
               description: Primary key, a unique ID value for each row. Each row represents a day in the calendar year. 
+              tests:
+                 - unique 
+                 - not_null
+        - name: category
+          description: information about groups of events.
+          columns:
+            - name: catid
+              description: Primary key, a unique ID value for each row. Each row represents a specific type of event for which tickets are bought and sold. 
+              tests:
+                 - unique 
+                 - not_null
+        - name: listing
+          description: listing of a batch of tickets for a specific event. .
+          columns:
+            - name: listid
+              description: Primary key, a unique ID value for each row. Each row represents a listing of a batch of tickets for a specific event.  
               tests:
                  - unique 
                  - not_null
