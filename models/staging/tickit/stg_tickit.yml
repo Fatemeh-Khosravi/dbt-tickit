@@ -22,3 +22,21 @@ models:
   - name: stg_sales_per_day
     description: Total number of sales per day.
     
+  -  name: stg_day_date
+     description: days of the calender.
+     columns:
+      - name: caldate
+        tests:
+          - unique
+          - not_null
+      - name: day
+        tests:
+           - accepted_values:
+              values:
+                   - WE
+                   - TH
+                   - FR
+                   - SA
+                   - SU
+                   - MO
+                   - TU

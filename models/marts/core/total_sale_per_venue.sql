@@ -1,12 +1,12 @@
  --total number of sales per venue city.
 
-SELECT
+select
    v.venuecity,
-   COUNT(*) AS num_sales
+   COUNT(*) as num_sales
 from {{ source('tickit','sales')}} s
-JOIN {{ source('tickit','event')}} e
-  ON e.eventid = s.eventid
-JOIN {{ source('tickit','venue')}} v
-  ON v.venueid = e.venueid
-GROUP BY v.venuecity
-ORDER BY num_sales DESC
+join {{ source('tickit','event')}} e
+  on e.eventid = s.eventid
+join {{ source('tickit','venue')}} v
+  on v.venueid = e.venueid
+group by v.venuecity
+order by num_sales desc

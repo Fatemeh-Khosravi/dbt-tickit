@@ -37,4 +37,11 @@ sources:
               tests:
                  - unique 
                  - not_null
-            
+        - name: date
+          description: date information.
+          columns:
+            - name: dateid
+              description: Primary key, a unique ID value for each row. Each row represents a day in the calendar year. 
+              tests:
+                 - unique 
+                 - not_null
