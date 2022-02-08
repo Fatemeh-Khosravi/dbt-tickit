@@ -4,6 +4,7 @@ with users as (
         userid as user_id,
         firstname,
         lastname
+        
 
     from {{ source('tickit','users')}}
 )

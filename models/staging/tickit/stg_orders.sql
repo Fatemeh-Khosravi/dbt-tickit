@@ -4,6 +4,7 @@ with orders as (
         salesid as order_id,
         buyerid as user_id,
         
+        
 
     from {{ source('tickit','sales')}}
 )
