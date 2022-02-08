@@ -1,4 +1,4 @@
---tickets which have been sold on each holiday of 2008
+--tickets which have been sold on each holiday of 2008.
 
 with day_date as (
 

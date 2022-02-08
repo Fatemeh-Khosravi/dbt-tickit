@@ -2,7 +2,36 @@ version: 2
 
 models:
   - name: buyer_pairs
-    description: buyer pairs who have attended 3 or more events together
-    
+    description: buyer pairs who have attended 3 or more events together.
+  - name: day_over_day
+    description: day-over-day change in sales.
+  - name: dim_buyers
+    description: number of orders for each users.
+  - name: holiday_ticket
+    description: tickets which have been sold on each holiday of 2008.
+  - name: outliers
+    description: days which were outliers for the number of ticket sales.
+  - name: tickets_sold
+    description: the percent of listed tickets sold for each event.
+  - name: top_event_sale_city
+    description: top event by sales per city.
+  - name: total_sale_per_venue
+    description: total number of sales per venue city.
+  - name: unique_buyer_day
+    description: number of unique buyers per day.
+  - name: users_musical_sports
+    description: all the users who have bought a ticket to a musical and also like sports.
+  - name: venuecity_sales
+    description: How much each venue city earns.
+
+
+
+
+
+
+
+
+
+
 
   
