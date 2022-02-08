@@ -47,3 +47,12 @@ models:
         description: Primary key, a unique ID value for each row. Each row represents a separate event that takes place at a specific venue at a specific time. 
         tests:
           - not_null
+  - name: stg_ticket_per_event
+    description: numbers of tickets which are available per each events.
+    columns:
+      - name: eventid
+        description: Primary key, a unique ID value for each row. Each row represents a separate event that takes place at a specific venue at a specific time. 
+        tests:
+          - not_null
+          - unique
+    
