@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: buyer_pairs
+    description: buyer pairs who have attended 3 or more events together
+    
+
+  
